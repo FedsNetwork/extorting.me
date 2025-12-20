@@ -8,27 +8,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+<!-- Keep your original navbar CSS for correct size -->
+<link rel="stylesheet" href="../assets/css/navbar.css">
+
 <style>
 body{font-family:'Inter',sans-serif;background:#060606;color:#fff;margin:0;}
 
-/* Navbar Styles */
-nav{background:#000;padding:0.5rem 1rem;border-bottom:2px solid #222;position:sticky;top:0;z-index:999;}
-nav .container{display:flex;justify-content:space-between;align-items:center;max-width:1000px;margin:0 auto;}
-nav .nav-brand a{text-decoration:none;font-weight:600;font-size:1.75rem;animation:rainbow 5s infinite;}
-nav ul{display:flex;gap:1rem;list-style:none;}
-nav ul li a{color:white;text-decoration:none;font-weight:500;transition:0.2s;}
-nav ul li a:hover{animation:rainbow 3s infinite;}
-.hamburger{display:none;flex-direction:column;cursor:pointer;gap:4px;}
-.hamburger div{width:20px;height:2px;background:white;}
-@media(max-width:768px){
-    nav ul{display:none;flex-direction:column;background:#000;position:absolute;top:50px;right:1rem;padding:0.5rem;border-radius:4px;border:1px solid #222;width:150px;}
-    nav ul.active{display:flex;}
-    .hamburger{display:flex;}
-}
-@keyframes rainbow{0%{color:red;}17%{color:orange;}33%{color:yellow;}50%{color:green;}67%{color:blue;}84%{color:purple;}100%{color:red;}}
-
 /* HOA Styles */
-*{box-sizing:border-box;}
 .hoa-wrapper{min-height:calc(100vh - 50px); overflow:hidden;}
 .container{max-width:1000px;margin:0 auto;padding:2rem 1rem;}
 .page-title{text-align:center;font-size:2.5rem;font-weight:600;margin-bottom:2rem;text-transform:uppercase;letter-spacing:2px;text-shadow:2px 2px 4px #000; animation:rainbow 5s infinite;}
@@ -46,6 +32,11 @@ nav ul li a:hover{animation:rainbow 3s infinite;}
 .hoa-description a:hover{text-decoration:underline;}
 @media(max-width:1024px){.hoa-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:480px){.hoa-grid{grid-template-columns:1fr;}}
+
+/* Rainbow animation */
+@keyframes rainbow{
+    0%{color:red;}17%{color:orange;}33%{color:yellow;}50%{color:green;}67%{color:blue;}84%{color:purple;}100%{color:red;}
+}
 
 /* Sparkle cursor */
 .sparkle{pointer-events:none; position:fixed; font-family:monospace; font-weight:bold; font-size:8px; animation:sparkle-fade 0.8s forwards; z-index:1000; text-shadow:0 0 3px currentColor;}
@@ -65,8 +56,8 @@ nav ul li a:hover{animation:rainbow 3s infinite;}
     </div>
     <ul id="nav-links">
       <li><a href="../index">Home</a></li>
-      <li><a href="../profiles">Profiles</a></li>
-      <li><a href="#">HOA</a></li>
+      <li><a href="profiles/">Profiles</a></li>
+      <li><a href="/">HOA</a></li>
       <li><a href="../join">Discord</a></li>
     </ul>
   </div>
@@ -76,7 +67,7 @@ nav ul li a:hover{animation:rainbow 3s infinite;}
     <div class="container">
         <h1 class="page-title">Hall of Autism</h1>
         <div class="hoa-grid">
-            <!-- Example Redacted Cards -->
+            <!-- Example Cards -->
             <div class="hoa-card">
                 <div class="hoa-image"><img src="/hoa/26" alt="Gurv"></div>
                 <div class="hoa-content">
@@ -91,13 +82,13 @@ nav ul li a:hover{animation:rainbow 3s infinite;}
                     <div class="hoa-description"><b>m</b> Profile summary redacted.</div>
                 </div>
             </div>
-            <!-- Add remaining cards here -->
+            <!-- Add remaining cards -->
         </div>
     </div>
 </div>
 
 <script>
-// Hamburger toggle
+// Hamburger toggle (same as Users page)
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); });
