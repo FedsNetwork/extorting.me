@@ -2,7 +2,7 @@ const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
 
 let stars = [];
-const STAR_COUNT = 60; // not hella stars
+const STAR_COUNT = 60;
 
 function resize() {
   canvas.width = window.innerWidth;
@@ -25,16 +25,16 @@ function randomColor() {
 function createStar() {
   return {
     x: Math.random() * canvas.width,
-    y: -10,
+    y: -20,
     size: Math.random() * 2 + 1,
-    speed: Math.random() * 1.5 + 0.5,
+    speed: Math.random() * 3 + 2, // FASTER
     color: randomColor(),
-    opacity: Math.random() * 0.8 + 0.2
+    opacity: Math.random() * 0.7 + 0.3
   };
 }
 
 function updateStars() {
-  if (stars.length < STAR_COUNT && Math.random() < 0.05) {
+  if (stars.length < STAR_COUNT && Math.random() < 0.12) {
     stars.push(createStar());
   }
 
@@ -49,7 +49,7 @@ function updateStars() {
     ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
     ctx.fill();
 
-    if (star.y > canvas.height + 10) {
+    if (star.y > canvas.height + 30) {
       stars.splice(i, 1);
     }
   });
