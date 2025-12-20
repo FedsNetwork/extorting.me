@@ -45,7 +45,7 @@ body{font-family:'Inter',sans-serif;background:#060606;color:#fff;margin:0;}
 </head>
 <body>
 
-<!-- Navbar HTML directly inserted -->
+<!-- Navbar HTML -->
 <nav>
   <div class="container">
     <div class="nav-brand">
@@ -57,11 +57,18 @@ body{font-family:'Inter',sans-serif;background:#060606;color:#fff;margin:0;}
     <ul id="nav-links">
       <li><a href="../index">Home</a></li>
       <li><a href="profiles/">Profiles</a></li>
-      <li><a href="/">HOA</a></li>
+      <li><a href="#">HOA</a></li>
       <li><a href="../join">Discord</a></li>
     </ul>
   </div>
 </nav>
+
+<!-- Hamburger JS -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+</script>
 
 <div class="hoa-wrapper">
     <div class="container">
