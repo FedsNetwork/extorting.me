@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Feds</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Feds Official Website" />
+
+<meta property="og:title" content="Feds" />
+<meta property="og:description" content="Official Feds website" />
+<meta property="og:image" content="https://fedsgov.shop/assets/images/embed.png" />
+<meta property="og:type" content="website" />
+
+<meta name="theme-color" content="#000000" />
+<link rel="icon" href="assets/images/favi.ico" />
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* ===== Base ===== */
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:#0a0a0a;
+    color:#fff;
+}
+
+/* ===== Navbar (UNCHANGED FROM YOUR CODE) ===== */
+nav {
+    background:#000;
+    padding:0.5rem 1rem;
+    border-bottom:2px solid #222;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+nav .container {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1000px;
+    margin:0 auto;
+}
+nav .nav-brand a {
+    text-decoration:none;
+    font-weight:600;
+    font-size:1.75rem;
+    animation: rainbow 5s infinite;
+}
+nav ul {
+    display:flex;
+    gap:1rem;
+    list-style:none;
+}
+nav ul li a {
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.2s;
+}
+nav ul li a:hover {
+    animation: rainbow 3s infinite;
+}
+.hamburger {
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+    gap:4px;
+}
+.hamburger div {
+    width:20px;
+    height:2px;
+    background:white;
+}
+@media(max-width:768px) {
+    nav ul {
+        display:none;
+        flex-direction:column;
+        background:#000;
+        position:absolute;
+        top:50px;
+        right:1rem;
+        padding:0.5rem;
+        border-radius:4px;
+        border:1px solid #222;
+        width:150px;
+    }
+    nav ul.active { display:flex; }
+    .hamburger { display:flex; }
+}
+@keyframes rainbow{
+    0%{color:red;}17%{color:orange;}33%{color:yellow;}
+    50%{color:green;}67%{color:blue;}
+    84%{color:purple;}100%{color:red;}
+}
+
+/* ===== Hero ===== */
+.hero{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:2rem 1rem;
+}
+.hero h1{
+    font-size:3rem;
+    font-weight:600;
+    margin-bottom:1rem;
+    animation:rainbow 6s infinite;
+}
+.hero p{
+    max-width:600px;
+    margin:0 auto 2rem;
+    color:#b0b0b0;
+    font-size:1rem;
+}
+.hero-buttons{
+    display:flex;
+    gap:1rem;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+.hero-buttons a{
+    padding:0.75rem 1.5rem;
+    border:1px solid #333;
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    background:#0e0e0e;
+    transition:0.2s;
+}
+.hero-buttons a:hover{
+    border-color:#666;
+}
+
+/* ===== Sections ===== */
+.section{
+    max-width:1000px;
+    margin:0 auto;
+    padding:3rem 1rem;
+}
+.section-title{
+    text-align:center;
+    font-size:1.75rem;
+    margin-bottom:2rem;
+    font-weight:600;
+}
+
+/* ===== Grid (conflict.id inspired) ===== */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1rem;
+}
+.card{
+    background:#0e0e0e;
+    border:1px solid #222;
+    padding:1.25rem;
+}
+.card h3{
+    margin:0 0 0.5rem;
+    font-size:1.1rem;
+}
+.card p{
+    color:#b0b0b0;
+    font-size:0.9rem;
+    line-height:1.5;
+}
+@media(max-width:900px){
+    .grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:500px){
+    .grid{grid-template-columns:1fr;}
+}
+
+/* ===== Footer ===== */
+footer{
+    border-top:1px solid #222;
+    padding:1.5rem;
+    text-align:center;
+    color:#777;
+    font-size:0.85rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="container">
+    <div class="nav-brand">
+      <a href="index">Feds</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <div></div><div></div><div></div>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index">Home</a></li>
+      <li><a href="profiles">Profiles</a></li>
+      <li><a href="hoa">HOA</a></li>
+      <li><a href="join">Discord</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div>
+    <h1>Feds</h1>
+    <p>
+      Placeholder
+    </p>
+    <div class="hero-buttons">
+      <a href="profiles">View Profiles</a>
+      <a href="hoa">Hall of Autism</a>
+      <a href="join">Join Discord</a>
+    </div>
+  </div>
+</section>
+
+<!-- Info Section -->
+<section class="section">
+  <h2 class="section-title">Placeholder</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Placeholder</h3>
+      <p>
+        Placeholder
+      </p>
+    </div>
+    <div class="card">
+      <h3>Placeholder</h3>
+      <p>
+        Placeholder
+      </p>
+    </div>
+    <div class="card">
+      <h3>Placeholder</h3>
+      <p>
+       a
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+ © <span id="year"></span> fedsgov.shop
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
