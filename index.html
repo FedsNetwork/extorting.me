@@ -248,39 +248,31 @@
     </footer>
 
     <!-- ===== Script ===== -->
-    <script>
-    (function(_0x3f7b,_0x5c92){
-    const _0x1b8c=function(_0x2e77){
-    while(--_0x2e77){_0x3f7b.push(_0x3f7b.shift());}
-    };
-    _0x1b8c(++_0x5c92);
-    }(_0x2b6a,0x1b3));
-    const _0x4a1e=function(_0x3f7b){
-    return _0x2b6a[_0x3f7b];
-    };
-    (function(){
-        const a=document[_0x4a1e(0)](_0x4a1e(1)),
-              b=document[_0x4a1e(0)](_0x4a1e(2));
-        a&&b&&a.addEventListener('click',()=>b.classList.toggle('active'));
-        document.addEventListener('contextmenu',e=>e.preventDefault());
-        document.addEventListener('keydown',e=>{
-            if(e.key==='F12'||
-               (e.ctrlKey&&e.shiftKey&&['I','C','J'].includes(e.key.toUpperCase()))||
-               (e.ctrlKey&&e.key==='U')){
-                e.preventDefault();
-                alert(_0x4a1e(3));
-            }
-        });
-    })();
-    function _0x2b6a(){
-        return[
-            'getElementById',
-            'hamburger',
-            'nav-links',
-            'Inspecting is disabled!'
-        ];
+ <script>
+  // ===== Hamburger Menu =====
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // ===== Disable Right-Click & Inspect =====
+  document.addEventListener('contextmenu', e => e.preventDefault());
+
+  document.addEventListener('keydown', e => {
+    const blockedKeys = ['I', 'C', 'J'];
+    if (
+      e.key === 'F12' ||
+      (e.ctrlKey && e.shiftKey && blockedKeys.includes(e.key.toUpperCase())) ||
+      (e.ctrlKey && e.key.toUpperCase() === 'U')
+    ) {
+      e.preventDefault();
+      alert('Inspecting is disabled!');
     }
-    </script>
+  });
+</script>
+
 
 </body>
 </html>
