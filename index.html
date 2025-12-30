@@ -1,302 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Feds | Home</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="/Feds Official Website" />
+    <!-- ===== Meta ===== -->
+    <meta charset="UTF-8">
+    <title>Feds | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official Feds website">
 
-<meta property="og:title" content="Feds" />
-<meta property="og:description" content="Official Feds website" />
-<meta property="og:image" content="https://feds.top/imgs/fedsgif.gif" />
-<meta property="og:type" content="website" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Feds">
+    <meta property="og:description" content="Official Feds website">
+    <meta property="og:image" content="https://feds.top/imgs/fedsgif.gif">
+    <meta property="og:type" content="website">
 
-<meta name="theme-color" content="#000000" />
-<link rel="icon" href="assets/images/favi.ico" />
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" href="assets/images/favi.ico">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<style>
-/* ===== Base ===== */
-html, body {
-    margin:0;
-    padding:0;
-    font-family:'Inter',sans-serif;
-    background:#0a0a0a;
-    color:#fff;
-    overflow-x: hidden; /* prevent horizontal scroll */
-    scroll-behavior: smooth;
-}
+    <!-- ===== Styles ===== -->
+    <style>
+        /* ===== Base ===== */
+        * { box-sizing: border-box; }
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
-/* ===== Navbar ===== */
-nav {
-    background:#000;
-    padding:0.5rem 1rem;
-    border-bottom:2px solid #222;
-    position:sticky;
-    top:0;
-    z-index:999;
-}
-nav .container {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    max-width:1000px;
-    margin:0 auto;
-}
-nav .nav-brand a {
-    text-decoration:none;
-    font-weight:600;
-    font-size:1.75rem;
-    animation: rainbow 5s infinite;
-}
-nav ul {
-    display:flex;
-    gap:1rem;
-    list-style:none;
-}
-nav ul li a {
-    color:white;
-    text-decoration:none;
-    font-weight:500;
-    transition:0.2s;
-}
-nav ul li a:hover {
-    animation: rainbow 3s infinite;
-}
-.hamburger {
-    display:none;
-    flex-direction:column;
-    cursor:pointer;
-    gap:4px;
-}
-.hamburger div {
-    width:20px;
-    height:2px;
-    background:white;
-}
-@media(max-width:768px) {
-    nav ul {
-        display:none;
-        flex-direction:column;
-        background:#000;
-        position:absolute;
-        top:50px;
-        right:1rem;
-        padding:0.5rem;
-        border-radius:4px;
-        border:1px solid #222;
-        width:150px;
-    }
-    nav ul.active { display:flex; }
-    .hamburger { display:flex; }
-}
-@keyframes rainbow{
-    0%{color:red;}17%{color:orange;}33%{color:yellow;}
-    50%{color:green;}67%{color:blue;}
-    84%{color:purple;}100%{color:red;}
-}
+        /* ===== Navbar ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: #000;
+            border-bottom: 2px solid #222;
+            padding: 0.5rem 1rem;
+        }
 
-/* ===== Hero ===== */
-.hero{
-    height:100vh; /* full viewport height */
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:2rem 1rem;
-    box-sizing:border-box;
-}
-.hero h1{
-    font-size:3rem;
-    font-weight:600;
-    margin-bottom:1rem;
-    animation:rainbow 6s infinite;
-}
-.hero p{
-    max-width:600px;
-    margin:0 auto 2rem;
-    color:#b0b0b0;
-    font-size:1rem;
-}
-.hero-buttons{
-    display:flex;
-    gap:1rem;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-.hero-buttons a{
-    padding:0.75rem 1.5rem;
-    border:1px solid #333;
-    text-decoration:none;
-    color:white;
-    font-weight:500;
-    background:#0e0e0e;
-    transition:0.2s;
-}
-.hero-buttons a:hover{
-    border-color:#666;
-}
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-/* ===== Sections ===== */
-.section{
-    max-width:1000px;
-    margin:0 auto;
-    padding:3rem 1rem;
-}
-.section-title{
-    text-align:center;
-    font-size:1.75rem;
-    margin-bottom:2rem;
-    font-weight:600;
-}
+        .nav-brand a {
+            font-size: 1.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            animation: rainbow 5s infinite;
+        }
 
-/* ===== Grid ===== */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:1rem;
-}
-.card{
-    background:#0e0e0e;
-    border:1px solid #222;
-    padding:1.25rem;
-}
-.card h3{
-    margin:0 0 0.5rem;
-    font-size:1.1rem;
-}
-.card p{
-    color:#b0b0b0;
-    font-size:0.9rem;
-    line-height:1.5;
-}
-@media(max-width:900px){
-    .grid{grid-template-columns:repeat(2,1fr);}
-}
-@media(max-width:500px){
-    .grid{grid-template-columns:1fr;}
-}
+        nav ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+        }
 
-/* ===== Footer ===== */
-footer{
-    border-top:1px solid #222;
-    padding:1.5rem;
-    color:#777;
-    font-size:0.85rem;
-}
+        nav ul a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
 
-.footer-container {
-    max-width:1000px;
-    margin:0 auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:0.5rem;
-}
+        nav ul a:hover {
+            animation: rainbow 3s infinite;
+        }
 
-.footer-middle {
-    display:flex;
-    align-items:center;
-    gap:1rem;
-}
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
 
-.footer-buttons {
-    display:flex;
-    gap:0.75rem;
-}
+        .hamburger div {
+            width: 20px;
+            height: 2px;
+            background: #fff;
+        }
 
-.footer-btn {
-    text-decoration:none;
-    color:#fff;
-    background:#0e0e0e;
-    border:1px solid #222;
-    padding:0.35rem 0.75rem;
-    border-radius:4px;
-    transition:0.3s;
-    font-size:0.85rem;
-}
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                right: 1rem;
+                top: 55px;
+                background: #000;
+                border: 1px solid #222;
+                border-radius: 4px;
+                padding: 0.5rem;
+                flex-direction: column;
+                width: 150px;
+            }
 
-.footer-btn:hover {
-    border-color:#aa0000;
-    background:#1a0a0a;
-    box-shadow: 0 0 6px #aa0000;
-}
+            nav ul.active { display: flex; }
+            .hamburger { display: flex; }
+        }
 
-/* ===== Responsive ===== */
-@media(max-width:600px){
-    .footer-container {
-        flex-direction:column;
-        align-items:flex-start;
-    }
-    .footer-middle {
-        flex-direction:column;
-        align-items:flex-start;
-        gap:0.25rem;
-        margin-top:0.5rem;
-    }
-}
-</style>
+        /* ===== Hero ===== */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            animation: rainbow 6s infinite;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #b0b0b0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons a {
+            padding: 0.75rem 1.5rem;
+            background: #0e0e0e;
+            border: 1px solid #333;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .hero-buttons a:hover {
+            border-color: #666;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            border-top: 1px solid #222;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .footer-buttons {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .footer-btn {
+            padding: 0.35rem 0.75rem;
+            background: #0e0e0e;
+            border: 1px solid #222;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        .footer-btn:hover {
+            border-color: #aa0000;
+            background: #1a0a0a;
+            box-shadow: 0 0 6px #aa0000;
+        }
+
+        @keyframes rainbow {
+            0% { color: red; }
+            17% { color: orange; }
+            33% { color: yellow; }
+            50% { color: green; }
+            67% { color: blue; }
+            84% { color: purple; }
+            100% { color: red; }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- Navbar -->
-<nav>
-  <div class="container">
-    <div class="nav-brand">
-      <a href="index">Feds</a>
-    </div>
-    <div class="hamburger" id="hamburger">
-      <div></div><div></div><div></div>
-    </div>
-    <ul id="nav-links">
-      <li><a href="index">Home</a></li>
-      <li><a href="profiles">Profiles</a></li>
-      <li><a href="hoa">HOA</a></li>
-      <li><a href="join">Discord</a></li>
-    </ul>
-  </div>
-</nav>
+    <!-- ===== Navbar ===== -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-brand"><a href="index">Feds</a></div>
 
-<!-- Hero -->
-<section class="hero">
-  <div>
-    <h1>/Feds</h1>
-    <p>
-      The Official hub for the /feds community.
-    </p>
-    <div class="hero-buttons">
-      <a href="projects">Projects</a>
-      <a href="https://doxbin.net/user/FederalVile">Pastes</a>
-      <a href="join">Discord</a>
-    </div>
-  </div>
-</section>
+            <div class="hamburger" id="hamburger">
+                <div></div><div></div><div></div>
+            </div>
 
-<!-- Footer -->
-<footer>
-  <div class="footer-container">
-    <span class="copyright">© 2026 feds.top</span>
-    <div class="footer-middle">
-      <div class="footer-buttons">
-        <a href="/legal/tos" class="footer-btn">Terms of Service</a>
-        <a href="/legal/privacy" class="footer-btn">Privacy Policy</a>
-        <a href="/legal/" class="footer-btn">Legal</a>
-      </div>
-    </div>
-  </div>
-</footer>
+            <ul id="nav-links">
+                <li><a href="index">Home</a></li>
+                <li><a href="profiles">Profiles</a></li>
+                <li><a href="hoa">HOA</a></li>
+                <li><a href="join">Discord</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<script>
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-</script>
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+        <div>
+            <h1>/Feds</h1>
+            <p>The Official hub for the /feds community.</p>
+            <div class="hero-buttons">
+                <a href="projects">Projects</a>
+                <a href="https://doxbin.net/user/FederalVile">Pastes</a>
+                <a href="join">Discord</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        <div class="footer-container">
+            <span>© 2026 feds.top</span>
+            <div class="footer-buttons">
+                <a href="/legal/tos" class="footer-btn">Terms</a>
+                <a href="/legal/privacy" class="footer-btn">Privacy</a>
+                <a href="/legal/" class="footer-btn">Legal</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== Script ===== -->
+    <script>
+    (function(_0x3f7b,_0x5c92){
+    const _0x1b8c=function(_0x2e77){
+    while(--_0x2e77){_0x3f7b.push(_0x3f7b.shift());}
+    };
+    _0x1b8c(++_0x5c92);
+    }(_0x2b6a,0x1b3));
+    const _0x4a1e=function(_0x3f7b){
+    return _0x2b6a[_0x3f7b];
+    };
+    (function(){
+        const a=document[_0x4a1e(0)](_0x4a1e(1)),
+              b=document[_0x4a1e(0)](_0x4a1e(2));
+        a&&b&&a.addEventListener('click',()=>b.classList.toggle('active'));
+        document.addEventListener('contextmenu',e=>e.preventDefault());
+        document.addEventListener('keydown',e=>{
+            if(e.key==='F12'||
+               (e.ctrlKey&&e.shiftKey&&['I','C','J'].includes(e.key.toUpperCase()))||
+               (e.ctrlKey&&e.key==='U')){
+                e.preventDefault();
+                alert(_0x4a1e(3));
+            }
+        });
+    })();
+    function _0x2b6a(){
+        return[
+            'getElementById',
+            'hamburger',
+            'nav-links',
+            'Inspecting is disabled!'
+        ];
+    }
+    </script>
 
 </body>
 </html>
