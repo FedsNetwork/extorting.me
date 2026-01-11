@@ -467,3 +467,70 @@ a:hover {
     overflow-y: auto;
   }
 }
+/* ===== MOBILE RESPONSIVENESS ===== */
+@media (max-width: 1024px) {
+  .authBox {
+    flex-direction: column;
+    width: 90%;
+    padding: 24px;
+    gap: 24px;
+  }
+
+  /* Hide QR code on mobile/tablet */
+  .right-section .login-container {
+    display: none;
+  }
+
+  .main-form .input-groups {
+    width: 100%;
+  }
+
+  .login button {
+    width: 100%;
+  }
+
+  .main-form-header h2 {
+    font-size: 20px;
+  }
+
+  .main-form-header p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .authBox {
+    padding: 16px;
+    width: 95%;
+    gap: 16px;
+  }
+
+  /* Keep inputs full width and nice height */
+  .main-form .input-groups {
+    width: 100%;
+    gap: 16px;
+  }
+
+  input {
+    font-size: 16px;
+    height: 42px;
+  }
+
+  .login button {
+    width: 100%;
+    font-size: 16px;
+    height: 44px;
+  }
+
+  h1, h2 {
+    font-size: 20px;
+  }
+
+  p, label, .small-register a {
+    font-size: 14px;
+  }
+
+  .login-page {
+    overflow-y: auto;
+  }
+}
