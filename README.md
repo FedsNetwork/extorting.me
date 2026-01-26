@@ -36,6 +36,6 @@ will be treated as copyright infringement and may result in
 DMCA takedown requests and legal action.
 ---
 ## 🗂️ Connect
-- Https://t.me/VileFed
+- Https://t.me/federalvile
 - SSH.Vile on discord
 
