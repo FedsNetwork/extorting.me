@@ -1,8 +1,8 @@
-# feds.top
+# extorting.me
 
-![feds.top Logo](assets/images/embed.png) 
+![extorting.me Logo](assets/images/embed.png) 
 
-**feds.top** is a personal website featuring unique content, interactive pages, and an aesthetic digital experience. Built with modern web technologies, it’s optimized for both desktop and mobile devices.
+**extorting.me** is a personal website featuring unique content, interactive pages, and an aesthetic digital experience. Built with modern web technologies, it’s optimized for both desktop and mobile devices.
 
 ---
 
@@ -17,7 +17,7 @@
 ---
 ## ⚠️ Legal Notice / Usage Restrictions
 
-© 2025 **SSH.Vile** — https://feds.top  
+© 2025 **SSH.Vile** — https://extorting.me  
 **ALL RIGHTS RESERVED**
 
 This repository and its contents are **private and proprietary**.
