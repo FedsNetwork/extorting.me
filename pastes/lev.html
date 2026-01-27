@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lev - Exposed</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: black;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Blurred Background */
+    .bg-blur {
+      position: absolute;
+      inset: 0;
+      background: url("../assets/images/uploads/lev.mp4") center/cover no-repeat;
+      filter: blur(40px) brightness(0.4);
+      transform: scale(1.2);
+      z-index: 1;
+    }
+
+    /* Dark Overlay */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 2;
+    }
+
+    /* Video Wrapper */
+    .video-wrapper {
+      position: relative;
+      z-index: 3;
+      width: 90%;
+      max-width: 800px;
+      cursor: pointer;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 14px;
+      background: black;
+      box-shadow: 0 0 30px rgba(255,255,255,0.15);
+    }
+
+    /* Play Button */
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 70px;
+      color: white;
+      background: rgba(0,0,0,0.7);
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      transition: 0.2s;
+    }
+
+    .video-wrapper.playing .play-btn {
+      opacity: 0;
+    }
+
+    @media (max-width: 600px) {
+      .play-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="bg-blur"></div>
+  <div class="overlay"></div>
+
+  <!-- Video -->
+  <div class="video-wrapper" id="videoBox">
+
+    <video id="video" playsinline preload="metadata">
+      <source src="../assets/images/uploads/lev.mp4" type="video/mp4">
+    </video>
+
+    <div class="play-btn">▶</div>
+
+  </div>
+
+  <script>
+    const box = document.getElementById("videoBox");
+    const video = document.getElementById("video");
+
+    function isMobile() {
+      return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    box.addEventListener("click", async () => {
+
+      if (video.paused) {
+
+        await video.play();
+        box.classList.add("playing");
+
+        // Auto fullscreen on mobile
+        if (isMobile()) {
+
+          if (video.requestFullscreen) {
+            video.requestFullscreen();
+          } 
+          else if (video.webkitEnterFullscreen) {
+            video.webkitEnterFullscreen(); // iOS
+          }
+
+        }
+
+      } else {
+
+        video.pause();
+        box.classList.remove("playing");
+
+      }
+
+    });
+
+    video.addEventListener("ended", () => {
+      box.classList.remove("playing");
+    });
+  </script>
+
+</body>
+</html>
