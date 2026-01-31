@@ -4,8 +4,7 @@ To Whom It May Concern,
 
 I am the copyright owner of the following original work:
 
-Project: /Federal
-Owner: SSH.Vile / VileFed
+
 Website: https://extorting.me
 Repository/Content: All source code, assets, designs, and structure
 
@@ -29,5 +28,4 @@ infringing material.
 
 Signed,
 SSH.Vile
-Owner — VileFed
 Date: [DATE]
