@@ -87,6 +87,51 @@ nav{
   color:var(--red2);
 }
 
+/* Hamburger */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+  gap:5px;
+}
+
+.hamburger span{
+  width:24px;
+  height:3px;
+  background:#fff;
+  border-radius:2px;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .nav-wrap{
+    flex-wrap:wrap;
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
+  .nav-links{
+    width:100%;
+    display:none;
+    flex-direction:column;
+    background:#000;
+    margin-top:1rem;
+    border-top:1px solid var(--border);
+    padding-top:1rem;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .nav-links a{
+    margin:0.6rem 0;
+    font-size:1rem;
+  }
+}
+
 /* ===== Hero ===== */
 
 .hero{
@@ -354,11 +399,17 @@ body.light{
 
     <div class="brand">Extorted</div>
 
-    <div class="nav-links">
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
       <a href="#">Home</a>
       <a href="services">Services</a>
       <a href="#">Connect</a>
-      <span  id="themeBtn"></span>
+      <span id="themeBtn"></span>
     </div>
 
   </div>
@@ -439,10 +490,6 @@ body.light{
   </div>
 
 </section>
-
-<!-- ===== About ===== -->
-
-
 
 <!-- ===== Footer ===== -->
 
@@ -546,6 +593,15 @@ window.onload=()=>{
   animate('stat2',7421);
   animate('stat3',2150);
   animate('stat4',96);
+};
+
+/* Mobile Menu */
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.onclick = () => {
+  navLinks.classList.toggle('active');
 };
 
 </script>
