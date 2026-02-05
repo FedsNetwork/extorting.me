@@ -6,372 +6,547 @@
 <meta charset="UTF-8">
 <title>Home • Extorted</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="description" content="The #1 Fansign Network. Come check us out and place your first purchase today!">
 
+<!-- OpenGraph -->
 <meta property="og:title" content="Home • Extorted">
 <meta property="og:description" content="The #1 Fansign Network. Come check us out and place your first purchase today!">
 <meta property="og:image" content="https://extorting.me/assets/images/extortsv2.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://extorting.me/">
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home • Extorted" />
-<meta name="twitter:description" content="The #1 Fansign Network. Come check us out and place your first purchase today!" />
-<meta name="twitter:image" content="https://extorting.me/assets/images/extortsv2.png" />
+<!-- Twitter / Discord -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Home • Extorted">
+<meta name="twitter:description" content="The #1 Fansign Network. Come check us out and place your first purchase today!">
+<meta name="twitter:image" content="https://extorting.me/assets/images/extortsv2.png">
 
-<meta name="theme-color" content="#330000">
+<meta name="theme-color" content="#8b0000">
+
 <link rel="icon" href="assets/images/favi.ico">
-
-<!-- Fonts & Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== Base ===== */
-* { box-sizing: border-box; }
+/* ===== Root ===== */
 
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
-  background: #0a0a0a;
-  color: #fff;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+:root{
+  --bg:#070707;
+  --panel:#0f0f0f;
+  --border:#1f1f1f;
+  --red:#8b0000;
+  --red2:#b00000;
+  --text:#ffffff;
+  --muted:#aaaaaa;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
 }
 
 /* ===== Navbar ===== */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background: #000;
-  border-bottom: 2px solid #222;
-  padding: 0.5rem 1rem;
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#000;
+  border-bottom:1px solid var(--border);
 }
 
-.nav-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.nav-wrap{
+  max-width:1200px;
+  margin:auto;
+  padding:1rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.nav-brand a {
-  font-size: 1.75rem;
-  font-weight: 600;
-  text-decoration: none;
-  animation: rainbow 5s infinite;
+.brand{
+  font-size:1.6rem;
+  font-weight:700;
+  color:var(--red2);
 }
 
-nav ul {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
+.nav-links a{
+  margin-left:1.2rem;
+  text-decoration:none;
+  color:#fff;
+  font-weight:500;
+  transition:.2s;
 }
 
-nav ul a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-nav ul a:hover {
-  animation: rainbow 3s infinite;
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  cursor: pointer;
-}
-
-.hamburger div {
-  width: 20px;
-  height: 2px;
-  background: #fff;
-}
-
-@media (max-width: 768px) {
-
-  nav ul {
-    display: none;
-    position: absolute;
-    right: 1rem;
-    top: 55px;
-    background: #000;
-    border: 1px solid #222;
-    border-radius: 4px;
-    padding: 0.5rem;
-    flex-direction: column;
-    width: 150px;
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
+.nav-links a:hover{
+  color:var(--red2);
 }
 
 /* ===== Hero ===== */
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem 1rem;
+
+.hero{
+  padding:5rem 1rem 4rem;
+  text-align:center;
+  background:radial-gradient(circle at top, rgba(139,0,0,.15), transparent 60%);
 }
 
-.hero h1 {
-  font-size: 3rem;
-  animation: rainbow 6s infinite;
+.hero h1{
+  font-size:clamp(2.2rem,5vw,3.4rem);
+  margin-bottom:1rem;
 }
 
-.hero p {
-  max-width: 600px;
-  margin: 1rem auto 2rem;
-  color: #aaa;
+.hero span{
+  color:var(--red2);
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
+.hero p{
+  max-width:650px;
+  margin:auto;
+  color:var(--muted);
+  line-height:1.7;
+  font-size:1.05rem;
 }
 
-.hero-buttons a {
-  padding: 0.75rem 1.5rem;
-  background: #0e0e0e;
-  border: 1px solid #333;
-  color: #fff;
-  text-decoration: none;
+/* ===== Stats ===== */
+
+.stats{
+  margin-top:3rem;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:1rem;
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.stat-box{
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:1.5rem 1rem;
+  border-radius:10px;
+}
+
+.stat-box h3{
+  color:var(--red2);
+  font-size:1.8rem;
+  margin:.2rem 0;
+}
+
+.stat-box p{
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* ===== Sections ===== */
+
+.section{
+  max-width:1100px;
+  margin:4rem auto;
+  padding:0 1rem;
+  text-align:center;
+}
+
+.section h2{
+  margin-bottom:1rem;
+  font-size:2rem;
+}
+
+.section span{
+  color:var(--red2);
+}
+
+.section p{
+  color:var(--muted);
+  max-width:700px;
+  margin:0 auto 2rem;
+  line-height:1.7;
+}
+
+/* ===== Cards ===== */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1.2rem;
+}
+
+.card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:1.5rem;
+  transition:.25s;
+  position:relative;
+  overflow:hidden;
+}
+
+.card::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(139,0,0,.15),transparent);
+  opacity:0;
+  transition:.3s;
+}
+
+.card:hover::after{
+  opacity:1;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  border-color:var(--red);
+}
+
+.card h3{
+  margin:.5rem 0;
+  color:var(--red2);
+}
+
+.card p{
+  font-size:.95rem;
+  color:var(--muted);
+}
+
+/* ===== Theme Toggle ===== */
+
+.theme-toggle{
+  cursor:pointer;
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:.4rem .7rem;
+  border-radius:6px;
+  font-size:.8rem;
 }
 
 /* ===== Footer ===== */
-footer {
-  border-top: 1px solid #222;
-  padding: 1.5rem;
-  font-size: 0.85rem;
-  color: #777;
+
+footer{
+  background:#000;
+  border-top:1px solid var(--border);
 }
 
-.footer-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+.footer-wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:2rem 1rem;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1.5rem;
 }
 
-/* ===== Rainbow ===== */
-@keyframes rainbow {
-  0% { color: red; }
-  17% { color: orange; }
-  33% { color: yellow; }
-  50% { color: green; }
-  67% { color: blue; }
-  84% { color: purple; }
-  100% { color: red; }
+.footer-col h4{
+  color:var(--red2);
+  margin-bottom:.6rem;
+}
+
+.footer-col a{
+  display:block;
+  color:#ccc;
+  text-decoration:none;
+  margin:.3rem 0;
+  font-size:.9rem;
+}
+
+.footer-col a:hover{
+  color:var(--red2);
+}
+
+.footer-bottom{
+  text-align:center;
+  padding:1rem;
+  border-top:1px solid var(--border);
+  font-size:.85rem;
+  color:#777;
 }
 
 /* ===== Age Gate ===== */
 
-#age-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(6px);
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
+#age-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  backdrop-filter:blur(8px);
+  z-index:9999;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:1rem;
 }
 
-#age-overlay.hidden {
-  display: none;
+#age-overlay.hidden{display:none;}
+
+.age-box{
+  background:var(--panel);
+  border:1px solid var(--red);
+  border-radius:12px;
+  max-width:460px;
+  padding:2rem;
+  text-align:center;
+  box-shadow:0 0 35px rgba(139,0,0,.4);
+  animation:fade .3s ease;
 }
 
-.age-box {
-  background: #0e0e0e;
-  border: 1px solid #aa0000;
-  box-shadow: 0 0 25px rgba(170,0,0,0.4);
-  padding: 2rem;
-  max-width: 420px;
-  width: 100%;
-  text-align: center;
-  border-radius: 8px;
-  animation: fadeIn 0.4s ease;
+.age-box h2{color:var(--red2);}
+
+.age-box p{color:#ccc;line-height:1.6;font-size:.95rem;}
+
+#age-confirm{
+  margin-top:1.5rem;
+  width:100%;
+  padding:.8rem;
+  background:var(--red);
+  border:none;
+  color:#fff;
+  font-weight:600;
+  border-radius:6px;
+  cursor:pointer;
 }
 
-.age-box h2 {
-  color: #ff4444;
-  margin-bottom: 1rem;
+#age-confirm:hover{background:var(--red2);}
+
+@keyframes fade{
+  from{opacity:0;transform:scale(.95)}
+  to{opacity:1;transform:scale(1)}
 }
 
-.age-box p {
-  color: #ccc;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
-}
+/* ===== Light Mode ===== */
 
-#age-confirm {
-  width: 100%;
-  background: #aa0000;
-  border: none;
-  padding: 0.7rem;
-  color: #fff;
-  font-weight: 600;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#age-confirm:hover {
-  background: #cc0000;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+body.light{
+  --bg:#f5f5f5;
+  --panel:#ffffff;
+  --border:#ddd;
+  --text:#111;
+  --muted:#555;
 }
 
 </style>
 </head>
-
 <body>
 
 <!-- ===== Age Gate ===== -->
+
 <div id="age-overlay">
   <div class="age-box">
-    <h2>⚠️ Potential Age Restricted Ahead</h2>
+
+    <h2>⚠️ Age Restricted</h2>
 
     <p>
-        <strong>This website contains material intended for adults only.</strong> <br>
-        If you are under 18 years of age, or younger than the legal age of majority in the place where you are accessing this site, you are not permitted to enter or view any of its content. <br>
-        By continuing onto the site, you confirm that you are at least 18 years old, or have reached the age of majority where you live, and that you agree to follow our Terms of Service.<br>
-        By clicking the "I Agree" button and accessing the site, you acknowledge the above conditions and affirm, under penalty of perjury, that you are of legal age (18 or older, or the age of majority in your jurisdiction, whichever is higer)
+      This site contains adult-oriented material.
+      By continuing, you confirm that you are at least 18 years old
+      or the age of majority in your jurisdiction.
     </p>
 
-    <button id="age-confirm">I Agree</button>
+    <button id="age-confirm">I Agree & Continue</button>
+
   </div>
 </div>
 
 <!-- ===== Navbar ===== -->
+
 <nav>
-  <div class="nav-container">
+  <div class="nav-wrap">
 
-    <div class="nav-brand">
-      <a href="index">Extorted</a>
+    <div class="brand">Extorted</div>
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="services">Services</a>
+      <a href="#">Connect</a>
+      <span  id="themeBtn"></span>
     </div>
-
-    <div class="hamburger" id="hamburger">
-      <div></div><div></div><div></div>
-    </div>
-
-    <ul id="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="pages/hoa">HOA</a></li>
-      <li><a href="services">Services</a></li>
-      <li><a href="pages/socials">Connects</a></li>
-    </ul>
 
   </div>
 </nav>
 
 <!-- ===== Hero ===== -->
+
 <section class="hero">
-  <div>
 
-    <h1>revamp</h1>
-    <p>revamping</p>
+  <h1> <span>Extorted</span> Network</h1>
 
-    <div class="hero-buttons">
-      <a href="pages/projects">Projects</a>
-      <a href="https://doxbin.net/user/FederalVile">Pastes</a>
-      <a href="pages/join">Discord</a>
+  <p>
+    A trusted platform for premium fansigns, verified vendors,
+    and private community driven services built for privacy, and quality.
+  </p>
+
+  <!-- Stats -->
+
+  <div class="stats">
+
+    <div class="stat-box">
+      <h3 id="stat1">0</h3>
+      <p>Active Vendors</p>
+    </div>
+
+    <div class="stat-box">
+      <h3 id="stat2">0</h3>
+      <p>Completed Orders</p>
+    </div>
+
+    <div class="stat-box">
+      <h3 id="stat3">0</h3>
+      <p>Community Members</p>
+    </div>
+
+    <div class="stat-box">
+      <h3 id="stat4">0</h3>
+      <p>Verified Services</p>
     </div>
 
   </div>
+
 </section>
 
-<!-- ===== Footer ===== -->
-<footer>
-  <div class="footer-container">
+<!-- ===== Services ===== -->
 
-    <span>© 2026 extorting.me</span>
+<section class="section">
 
-    <div>
-      <a href="/legal/tos">Terms</a> |
-      <a href="/legal/privacy">Privacy</a> |
-      <a href="/legal/">Legal</a>
+  <h2><span>Featured</span> Services</h2>
+
+  <p>
+    Hand-picked services from verified providers
+    focused on quality and reliability.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Custom Fansigns</h3>
+      <p>Personalized high-resolution designs.</p>
+    </div>
+
+    <div class="card">
+      <h3>Private Vendors</h3>
+      <p>Invite-only trusted sellers.</p>
+    </div>
+
+    <div class="card">
+      <h3>Market Access</h3>
+      <p>Exclusive drops and offers.</p>
+    </div>
+
+    <div class="card">
+      <h3>Secure Delivery</h3>
+      <p>Fast, private distribution system.</p>
     </div>
 
   </div>
+
+</section>
+
+<!-- ===== About ===== -->
+
+
+
+<!-- ===== Footer ===== -->
+
+<footer>
+
+  <div class="footer-wrap">
+
+    <div class="footer-col">
+      <h4>Extorting.me</h4>
+      <p style="color:#aaa;font-size:.9rem">
+        Premium fansign network and vendor platform.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="#">Home</a>
+      <a href="services">Services</a>
+      <a href="pages/hoa">HOA</a>
+      <a href="pages/socials">Connect</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="/legal/tos">Terms</a>
+      <a href="/legal/privacy">Privacy</a>
+      <a href="/legal">Legal Info</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Community</h4>
+      <a href="#">Discord</a>
+      <a href="https://t.me/ExtortionComs">Telegram</a>
+      <a href="https://t.me/CrematedRemain">Support</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 extorting.me — All Rights Reserved
+  </div>
+
 </footer>
+
+<!-- ===== Scripts ===== -->
 
 <script>
 
-/* ===== Hamburger ===== */
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
+/* Age Gate */
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
+const overlay = document.getElementById('age-overlay');
+const btn = document.getElementById('age-confirm');
 
-/* ===== Disable Inspect ===== */
-document.addEventListener('contextmenu', e => e.preventDefault());
-
-document.addEventListener('keydown', e => {
-
-  const blocked = ['I','C','J'];
-
-  if (
-    e.key === 'F12' ||
-    (e.ctrlKey && e.shiftKey && blocked.includes(e.key.toUpperCase())) ||
-    (e.ctrlKey && e.key.toUpperCase() === 'U')
-  ) {
-    e.preventDefault();
-    alert('Inspecting is disabled!');
-  }
-
-});
-
-/* ===== Age Gate ===== */
-
-const ageOverlay = document.getElementById('age-overlay');
-const ageBtn = document.getElementById('age-confirm');
-
-if (localStorage.getItem('ageAccepted') === 'true') {
-  ageOverlay.classList.add('hidden');
-  document.body.style.overflow = 'auto';
-} else {
-  document.body.style.overflow = 'hidden';
+if(localStorage.getItem('ageAccepted')==='true'){
+  overlay.classList.add('hidden');
+  document.body.style.overflow='auto';
+}else{
+  document.body.style.overflow='hidden';
 }
 
-ageBtn.addEventListener('click', () => {
+btn.onclick=()=>{
+  localStorage.setItem('ageAccepted','true');
+  overlay.classList.add('hidden');
+  document.body.style.overflow='auto';
+};
 
-  localStorage.setItem('ageAccepted', 'true');
+/* Theme Toggle */
 
-  ageOverlay.classList.add('hidden');
+const themeBtn=document.getElementById('themeBtn');
 
-  document.body.style.overflow = 'auto';
+if(localStorage.getItem('theme')==='light'){
+  document.body.classList.add('light');
+}
 
-});
+themeBtn.onclick=()=>{
+  document.body.classList.toggle('light');
+  localStorage.setItem('theme',
+    document.body.classList.contains('light')?'light':'dark'
+  );
+};
+
+/* Animated Stats */
+
+function animate(id,target){
+  let el=document.getElementById(id);
+  let count=0;
+  let step=Math.ceil(target/60);
+
+  let int=setInterval(()=>{
+    count+=step;
+    if(count>=target){
+      count=target;
+      clearInterval(int);
+    }
+    el.textContent=count.toLocaleString();
+  },20);
+}
+
+window.onload=()=>{
+  animate('stat1',128);
+  animate('stat2',7421);
+  animate('stat3',2150);
+  animate('stat4',96);
+};
 
 </script>
 
